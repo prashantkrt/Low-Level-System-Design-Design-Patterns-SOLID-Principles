@@ -35,6 +35,8 @@ class WriteFile extends ReadableFile implements Writable {
     }
 }
 
+class ReadOnlyFile extends ReadableFile {}
+
 public class LiskovSubstitutionPrinciple {
     public static void main(String[] args) {
         Readable readable = new ReadableFile();
@@ -45,5 +47,8 @@ public class LiskovSubstitutionPrinciple {
 
         ReadableFile readableFile = new WriteFile();
         readableFile.read();
+
+        ReadableFile readableFile2 = new ReadOnlyFile();
+        readableFile2.read();
     }
 }
