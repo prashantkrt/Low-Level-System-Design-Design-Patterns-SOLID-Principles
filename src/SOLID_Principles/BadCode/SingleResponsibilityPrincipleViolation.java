@@ -1,4 +1,4 @@
-package SOLID_Principles.SRP.BadCode;
+package SOLID_Principles.BadCode;
 
 // Here we should have used only invoice related methods instead of database and notification which violates the SRP
 class Invoice {

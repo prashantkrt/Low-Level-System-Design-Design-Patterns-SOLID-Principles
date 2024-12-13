@@ -1,4 +1,4 @@
-package SOLID_Principles.SRP.BadCode;
+package SOLID_Principles.BadCode;
 
 //Class should not be a burden that the methods which they don't need
 

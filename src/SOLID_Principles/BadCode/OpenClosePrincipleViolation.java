@@ -1,4 +1,4 @@
-package SOLID_Principles.SRP.BadCode;
+package SOLID_Principles.BadCode;
 
 // Classes, modules, functions, etc. Should be open for extension but closed for modification
 // Problem in the below example is that suppose I have to add a new case for UPI then I have to modify the exiting code which is tested already

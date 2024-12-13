@@ -1,4 +1,4 @@
-package SOLID_Principles.SRP.GoodCode;
+package SOLID_Principles.GoodCode;
 
 //Open for extension and closed for modification
 

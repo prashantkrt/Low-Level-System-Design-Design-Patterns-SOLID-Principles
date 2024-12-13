@@ -1,4 +1,4 @@
-package SOLID_Principles.SRP.GoodCode;
+package SOLID_Principles.GoodCode;
 
 interface Readable {
     void read();

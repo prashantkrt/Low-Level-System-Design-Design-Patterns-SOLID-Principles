@@ -1,4 +1,4 @@
-package SOLID_Principles.SRP.BadCode;
+package SOLID_Principles.BadCode;
 
 class SMSNotification {
     public void sendSMS(String message) {
