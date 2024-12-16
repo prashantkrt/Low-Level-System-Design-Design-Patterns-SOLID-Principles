@@ -48,6 +48,7 @@ class UnderlineCommand implements Command {
     }
 }
 
+//Invoker
 //Button
 class Button {
 
@@ -66,7 +67,7 @@ class Button {
     }
 }
 
-
+//Receiver
 class TextEdit {
 
     public void boldText() {
