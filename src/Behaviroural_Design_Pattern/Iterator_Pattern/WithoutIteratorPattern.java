@@ -30,7 +30,7 @@ class BookCollection{
     //what if I wanted to make this List to Set
      private List<Book> books = new ArrayList<Book>();
 
-     //have to make changes for iterating over the set interface
+    //have to make changes for iterating over the set interface
     // private Set<Book> books = new HashSet<>();
 
      public void addBook(Book book){
@@ -50,9 +50,9 @@ public class WithoutIteratorPattern {
         bookCollection.addBook(new Book("Book 2"));
         bookCollection.addBook(new Book("Book 3"));
 
-        //suppose I have changed the List to Set in the class BookCollection in that case getT
-        for(Book book : bookCollection.getBooks()){
-            System.out.println(book.getTitle());
+        //suppose I have changed the List to Set in that case we won't have the get(index) method
+        for (int i = 0; i < bookCollection.getBooks().size(); i++) {
+            System.out.println(bookCollection.getBooks().get(i).getTitle());
         }
 
     }
