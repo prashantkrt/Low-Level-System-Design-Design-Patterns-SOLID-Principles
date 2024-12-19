@@ -1,4 +1,4 @@
-package ToBeRemembered;
+package Practice;
 
 class Prototype implements Cloneable {
 
@@ -29,7 +29,7 @@ class Prototype implements Cloneable {
 }
 public class PrototypeExample {
     public static void main(String[] args) {
-        Prototype prototype = new Prototype("ToBeRemembered", 18);
+        Prototype prototype = new Prototype("Practice", 18);
         System.out.println(prototype);
         Prototype clone = prototype.clone();
         System.out.println(clone);
