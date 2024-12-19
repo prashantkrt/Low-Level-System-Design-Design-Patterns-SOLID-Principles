@@ -61,6 +61,8 @@ class TransportFactory {
 //    }
 //}
 
+// client code not creating the object
+// at the runtime we can change the type without modifying the client, here we are open/closed following
 public class FactoryPattern {
     public static void main(String[] args) {
         Transportation transportation = TransportFactory.getTransportation("ship");
@@ -69,6 +71,5 @@ public class FactoryPattern {
         transportation.deliver();
         transportation = TransportFactory.getTransportation("cargoTruck");
         transportation.deliver();
-
     }
 }
