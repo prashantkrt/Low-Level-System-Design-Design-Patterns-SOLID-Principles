@@ -12,7 +12,6 @@ class Ship implements Transportation {
 }
 
 class Aeroplane implements Transportation {
-
     @Override
     public void deliver() {
         System.out.println("deliver by aeroplane");
