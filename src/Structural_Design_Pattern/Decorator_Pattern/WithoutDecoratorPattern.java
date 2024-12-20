@@ -20,21 +20,6 @@ class BasicPizza implements Pizza {
     }
 }
 
-// Paneer pizza can have its own hierarchy
-// multiple class explosions paneer variant like cheese, Olive and Mushroom
-class PaneerPizza extends BasicPizza {
-
-    @Override
-    public String getDescription() {
-        return super.getDescription() + "with Panner topping ";
-    }
-
-    @Override
-    public double getCost() {
-        return super.getCost() + 15.00;
-    }
-}
-
 // multiple class explosions cheese variant like Olive and Mushroom
 class CheesePizza extends BasicPizza {
     @Override
@@ -71,6 +56,23 @@ class MushroomPizza extends CheesePizza {
         return super.getCost() + 5.00;
     }
 }
+
+// Paneer pizza can have its own hierarchy
+// multiple class explosions paneer variant like cheese, Olive and Mushroom
+class PaneerPizza extends BasicPizza {
+
+    @Override
+    public String getDescription() {
+        return super.getDescription() + "with Panner topping ";
+    }
+
+    @Override
+    public double getCost() {
+        return super.getCost() + 15.00;
+    }
+}
+
+// .... multiple explosion variant for panner makes code very long
 
 
 //Pizza App

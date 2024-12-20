@@ -42,7 +42,7 @@ abstract class PizzaDecorator implements MyPizza {
         return pizza.getPrice();
     }
 }
-
+//create concrete class for each topping
 class CheeseDecorator extends PizzaDecorator {
 
     public CheeseDecorator(MyPizza pizza) {
