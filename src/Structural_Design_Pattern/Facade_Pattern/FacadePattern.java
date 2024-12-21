@@ -17,7 +17,7 @@ class PaymentMicroService {
         return "processing payment for " + paymentId;
     }
 }
-
+// Centralized controlling
 // API Gateway is the best example of a facade pattern
 class APIGateway {
     private final UserMicroService userMicroService;
@@ -42,6 +42,7 @@ public class FacadePattern {
         OrderMicroService orderMicroService = new OrderMicroService();
         PaymentMicroService paymentMicroService = new PaymentMicroService();
 
+        //Now its decoupled
         //The Client is now interacting with APIGateway instead of individual microservices, which reduces the complexity of the code
         //API Gateway, will reduce the complexity
         APIGateway apiGateway = new APIGateway(userMicroService, orderMicroService, paymentMicroService);
