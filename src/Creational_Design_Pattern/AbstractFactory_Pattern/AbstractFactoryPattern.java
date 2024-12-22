@@ -36,7 +36,7 @@ class MacScroll implements Scroll {
     }
 }
 
-//Abstract Factory , factory of factory
+//Abstract Factory, factory of factory
 interface ComponentFactory {
    Button createButton(String osType);
    Scroll createScroll(String osType);
@@ -70,7 +70,7 @@ class WindowComponentFactory implements ComponentFactory {
 }
 
 
-// master factory best create this master as well :)
+// master factory, better create this master as well :)
 // without this also we can write it
 class MasterFactory  {
     public static ComponentFactory createButton(String osType) {
