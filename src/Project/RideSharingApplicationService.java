@@ -7,7 +7,7 @@ import java.util.Optional;
 //Breaking SRP
 //managing passengers
 //managing driver
-//booking
+//booking , fare calculation , distance calculations
 public class RideSharingApplicationService {
 
     // Matching service
@@ -74,6 +74,7 @@ public class RideSharingApplicationService {
         return Math.sqrt(Math.pow(distanceLatitude, 2) + Math.pow(distanceLongitude, 2));
     }
 
+    //violates OCP as if I need to add a new type of vehicle, then we have to make code change
     private double calculateFare(Vehicle vehicle, double distance) {
         return switch (vehicle.getVehicleType().toLowerCase()) {
             case "car" -> distance * 25;
