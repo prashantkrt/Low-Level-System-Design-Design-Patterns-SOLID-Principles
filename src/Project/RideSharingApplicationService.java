@@ -2,7 +2,12 @@ package Project;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
+//Breaking SRP
+//managing passengers
+//managing driver
+//booking
 public class RideSharingApplicationService {
 
     // Matching service
@@ -32,24 +37,33 @@ public class RideSharingApplicationService {
     }
 
     //booking the ride
-    public void bookRide(Passenger passenger,double distance) {
-        if(drivers.isEmpty()){
+    public void bookRide(Passenger passenger, double distance) {
+
+        if (drivers.isEmpty()) {
             System.out.println("No ride is available");
             return;
         }
-        Driver assignedDriver = drivers.stream().findFirst().get(); // random driver
+
+        Driver assignedDriver = null;
         double minDistance = Double.MAX_VALUE;
-        for(Driver driver : drivers){
-          double currentDistance = calculateDistance(passenger.getLocation(), driver.getLocation());
-          if(currentDistance < minDistance){
-              minDistance = currentDistance;
-              assignedDriver = driver;
-          }
+        for (Driver driver : drivers) {
+            if(driver.getStatus() == Status.AVAILABLE) {
+                double currentDistance = calculateDistance(passenger.getLocation(), driver.getLocation());
+                if (currentDistance < minDistance) {
+                    minDistance = currentDistance;
+                    assignedDriver = driver;
+                }
+            }
         }
+        if (assignedDriver == null) {
+            System.out.println("No ride is available");
+            return;
+        }
+        assignedDriver.setStatus(Status.BOOKED);
         double expectedFare = calculateFare(assignedDriver.getVehicle(), distance);
 
         System.out.println("Ride is available");
-        System.out.println("Booked driver: " + assignedDriver.getName() +" " +"vehicle number "+ assignedDriver.getVehicle().getVehicleNumber() + " distance: " + distance + " expectedFare: " + expectedFare);
+        System.out.println("Booked driver: " + assignedDriver.getName() + " " + "vehicle number " + assignedDriver.getVehicle().getVehicleNumber() + " distance: " + distance + " expectedFare: " + expectedFare);
         System.out.println("Driver is on your way");
     }
 
@@ -61,11 +75,11 @@ public class RideSharingApplicationService {
     }
 
     private double calculateFare(Vehicle vehicle, double distance) {
-        return switch (vehicle.getVehicleType().toLowerCase()){
-            case "car" -> distance*25;
-            case "auto" -> distance*12;
-            case "bike" -> distance*10;
-            default -> distance*8;
+        return switch (vehicle.getVehicleType().toLowerCase()) {
+            case "car" -> distance * 25;
+            case "auto" -> distance * 12;
+            case "bike" -> distance * 10;
+            default -> distance * 8;
         };
     }
 }

@@ -4,11 +4,13 @@ public class Driver {
     private String name;
     private Location location;
     private Vehicle vehicle;
+    private Status status;
 
-    public Driver(String name, Location location, Vehicle vehicle) {
+    public Driver(String name, Location location, Vehicle vehicle, Status status) {
         this.name = name;
         this.location = location;
         this.vehicle = vehicle;
+        this.status = status;
     }
 
     public String getName() {
@@ -33,5 +35,13 @@ public class Driver {
 
     public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }
