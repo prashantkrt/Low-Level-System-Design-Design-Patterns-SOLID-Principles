@@ -1,6 +1,6 @@
 package Project;
 
-public class Client {
+public class RideSharingApplicationClient {
     public static void main(String[] args) {
 
         RideSharingApplicationService service = new RideSharingApplicationService();
