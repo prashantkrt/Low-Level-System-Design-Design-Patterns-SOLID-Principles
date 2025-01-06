@@ -73,7 +73,7 @@ class WindowComponentFactory implements ComponentFactory {
 // master factory, better create this master as well :)
 // without this also we can write it
 class MasterFactory  {
-    public static ComponentFactory createButton(String osType) {
+    public static ComponentFactory selectOS(String osType) {
        return switch (osType) {
             case "Window" -> new WindowComponentFactory();
             case "Mac" -> new MacComponentFactory();
@@ -88,7 +88,7 @@ class MasterFactory  {
 public class AbstractFactoryPattern {
     public static void main(String[] args) {
         //better way
-        ComponentFactory factory = MasterFactory.createButton("Window");
+        ComponentFactory factory = MasterFactory.selectOS("Window");
         Button button = factory.createButton("Window");
         Scroll scroll = factory.createScroll("Window");
         button.render();
